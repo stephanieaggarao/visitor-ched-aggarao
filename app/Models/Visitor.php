@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Visitor extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name', 'address', 'position',
 
+    protected $fillable = [
+        'name', 'email', 'phone', 'address', 'position',
+        'company', 'purpose', 'host_name', 'host_department',
+        'check_in', 'check_out', 'status', 'notes',
     ];
 
+    protected $casts = [
+        'check_in' => 'datetime',
+        'check_out' => 'datetime',
+    ];
 }
