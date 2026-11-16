@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('host_department')->nullable();
             $table->timestamp('check_in')->nullable();
             $table->timestamp('check_out')->nullable();
-            $table->enum('status', ['expected', 'checked_in', 'checked_out', 'cancelled'])->default('expected');
+            $table->string('status')->default('expected');
             $table->text('notes')->nullable();
             $table->timestamps();
         });
